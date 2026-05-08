@@ -1,0 +1,23 @@
+{
+  "name": "smartcityx",
+  "version": "1.0.0",
+  "description": "Production-grade MERN app for smart city issue reporting",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install",
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "server:dev": "cd server && npm run dev",
+    "client:dev": "cd client && npm run dev",
+    "server:build": "cd server && npm run build",
+    "client:build": "cd client && npm run build",
+    "start": "cd server && npm start",
+    "lint": "cd server && npm run lint && cd ../client && npm run lint"
+  },
+  "keywords": ["MERN", "smart-city", "geospatial", "issue-tracking"],
+  "author": "SmartCityX Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
