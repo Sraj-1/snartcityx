@@ -48,49 +48,27 @@ cd SmartCityX
 npm run install-all
 ```
 
-### 2. Environment Setup
-
-**Backend (.env in `/server`)**
-```env
-PORT=5000
-MONGODB_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/smartcityx
-JWT_SECRET=your_super_secret_jwt_key_min_32_characters
-JWT_EXPIRE=7d
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret
-NODE_ENV=development
-ALLOWED_ORIGINS=http://localhost:3000,http://localhost:3001
-```
-
-**Frontend (.env.local in `/client`)**
-```env
-VITE_API_BASE_URL=http://localhost:5000
-VITE_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
-VITE_APP_NAME=SmartCityX
-```
-
-### 3. MongoDB Setup
+### 2. MongoDB Setup
 
 1. Create MongoDB Atlas cluster at https://www.mongodb.com/cloud/atlas
 2. Get connection string (looks like: `mongodb+srv://...`)
 3. Whitelist your IP or allow all
 4. Add to .env file
 
-### 4. Cloudinary Setup
+### 3. Cloudinary Setup
 
 1. Sign up at https://cloudinary.com
 2. Get API credentials from Settings > API Keys
 3. Add to backend .env
 
-### 5. Google Maps API
+### 4. Google Maps API
 
 1. Create project at Google Cloud Console
 2. Enable Maps JavaScript API
 3. Create API key with restrictions
 4. Add to frontend .env
 
-### 6. Run Development Servers
+### 5. Run Development Servers
 
 ```bash
 npm run dev
@@ -99,48 +77,6 @@ npm run dev
 This starts:
 - Backend: `http://localhost:5000`
 - Frontend: `http://localhost:3000`
-
-## 📁 Project Structure
-
-```
-SmartCityX/
-├── server/                          # Backend
-│   ├── src/
-│   │   ├── config/                 # Database, JWT, Cloudinary config
-│   │   ├── controllers/            # Route handlers (issues, auth, users)
-│   │   ├── middlewares/            # Auth, error handling, validation
-│   │   ├── models/                 # MongoDB schemas (User, Issue, etc)
-│   │   ├── routes/                 # API routes
-│   │   ├── utils/                  # Helpers, API responses, validators
-│   │   └── app.js                  # Express app setup
-│   ├── server.js                   # Entry point
-│   ├── .env                        # Environment variables
-│   └── package.json
-│
-├── client/                          # Frontend
-│   ├── src/
-│   │   ├── components/             # React components
-│   │   │   ├── Common/            # Navbar, Footer, Loading
-│   │   │   ├── Auth/              # Login, Register, ProtectedRoute
-│   │   │   ├── Issues/            # IssueForm, IssueList, IssueCard
-│   │   │   ├── Map/               # GoogleMap, MarkerCluster
-│   │   │   ├── Admin/             # Dashboard, IssueStatus, Analytics
-│   │   │   └── UI/                # Modal, Button, Input components
-│   │   ├── pages/                 # Page components
-│   │   ├── hooks/                 # Custom hooks (useAuth, useGeo, etc)
-│   │   ├── api/                   # API client setup and methods
-│   │   ├── store/                 # Zustand state management
-│   │   ├── styles/                # Global styles, animations
-│   │   ├── utils/                 # Helpers, validators, constants
-│   │   ├── App.jsx                # Root component
-│   │   └── main.jsx               # Entry point
-│   ├── .env.local                 # Environment variables
-│   └── package.json
-│
-├── .gitignore
-├── package.json
-└── README.md
-```
 
 ## 🔐 API Endpoints
 
